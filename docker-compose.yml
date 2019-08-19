@@ -5,7 +5,10 @@ services:
     image: awadieudonne/reg_system
     ports:
       - 80:3000
-    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm start'
+    command: npm run dev
+    volumes:
+      - .:/reg_system/
+      - /app/node_modules
     depends_on:
       - db
     environment:
