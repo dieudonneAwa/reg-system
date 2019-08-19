@@ -5,6 +5,11 @@
     "node": true,
     "es6": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
   "rules": {
     "linebreak-style": 0,
     "lines-between-class-members": 0,

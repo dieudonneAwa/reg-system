@@ -1,13 +1,14 @@
 import express from 'express';
-import { users } from '../controllers/index';
-import Todo from '../controllers/todos';
+import auth from '../helpers/auth';
+
+const { users, todos } = require('../controllers/index');
 
 const router = express.Router();
 
 router.get('/', (req, res) => res.json({ Hi: 'Welcome to my api' }));
 
 router.post('/auth/signup', users.signUp);
-router.post('/todos', Todo.create);
-router.get('/todos', Todo.getAllTodos);
+router.post('/todos', auth.verifyToken, todos.create);
+router.get('/todos', auth.verifyToken, todos.getAllTodos);
 
 export default router;
