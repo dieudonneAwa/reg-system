@@ -1,6 +1,6 @@
 const { Todo } = require('../models');
 
-export default {
+module.exports = {
   async create(req, res) {
     try {
       const todo = await Todo.create(req.body);

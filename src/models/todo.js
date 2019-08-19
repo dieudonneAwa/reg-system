@@ -19,5 +19,5 @@ export default (sequelize, DataTypes) => {
     });
   };
 
-  return Todo;
+  // return Todo;
 };
