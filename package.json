@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engine": {
+    "node": "10.15.1"
+  },
   "scripts": {
     "clean": "rm -rf lib && mkdir lib",
     "build": "npm run clean && babel ./src -d ./lib",
-    "dev": "nodemon --exec babel-node src/index.js"
+    "dev": "nodemon --exec babel-node src/index.js",
+    "start": "node src/index.js"
   },
   "author": "Awa",
   "license": "ISC",

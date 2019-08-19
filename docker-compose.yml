@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  reg_system:
+    image: awadieudonne/reg_system
+    ports:
+      - 80:3000
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm start'
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:awa@localhost:5432/reg_system
+      - PORT=3000
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=awa
+      - POSTGRES_DB=reg_system
