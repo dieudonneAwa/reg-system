@@ -1,7 +1,6 @@
-FROM node:10
-RUN /reg_system
-ADD . /reg_system
+FROM node:9-slim
 WORKDIR /reg_system
-RUN npm i
-EXPOSE 80
-CMD ["npm", "start"]
+COPY . /reg_system
+RUN npm install
+COPY . /reg_system
+CMD ["npm", "dev"]
