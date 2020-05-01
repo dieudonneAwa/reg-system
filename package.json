@@ -10,7 +10,9 @@
     "clean": "rm -rf lib && mkdir lib",
     "build": "npm run clean && babel ./src -d ./lib",
     "dev": "nodemon --exec babel-node src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Awa",
   "license": "ISC",
@@ -23,7 +25,8 @@
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.15.0",
-    "sequelize-cli": "^5.5.0"
+    "sequelize-cli": "^5.5.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -35,5 +38,6 @@
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2"
-  }
+  },
+  "snyk": true
 }
